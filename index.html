@@ -1,0 +1,177 @@
+<head>
+  <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href='font-awesome-4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+  <link href='css/style.css' rel='stylesheet' type='text/css'>
+  <script src='js/jquery.min.js'></script>
+  <script src='js/bootstrap.min.js'></script>
+  <script src='js/soundjs-0.5.2.min.js'></script>
+  <script src='js/jquery.hotkeys.js'></script>
+  <script src='js/soundmanager.js'></script>
+  <script src='js/quicksound.js'></script>
+</head>
+<body>
+  <div class='row'>
+    <div class='col-xs-4' id='control-panel'>
+      <h1>QuickSound</h1>
+      <i class='fa fa-random' id='random'></i>
+      <hr>
+      <div class='row'>
+        <h4 class='match-input-title col-md-4 vcenter'>
+          Crossfade
+        </h4>
+        <input class='col-md-8' id='crossfade-time' max='9' min='0' step='1' type='range' value='2'>
+        <span id='crossfade-time-label'>2</span>
+        <span>s</span>
+      </div>
+      <hr>
+      <div class='row'>
+        <h4 class='match-input-title col-md-4 vcenter'>
+          Name
+        </h4>
+        <input class='col-md-8' id='name'>
+      </div>
+      <hr>
+      <div class='row'>
+        <h4 class='match-input-title col-md-4 vcenter'>
+          Instruments
+        </h4>
+        <input class='col-md-8' id='instruments'>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <div id='instrument-text'></div>
+        </div>
+      </div>
+      <hr>
+      <div class='row'>
+        <h4 class='match-input-title col-md-4'>
+          Feel
+        </h4>
+        <input class='col-md-8' id='tags'>
+      </div>
+      <div class='row'>
+        <div class='col-md-12 tag-container'>
+          <div class='tag feel-tag' id='Action'>Action</div>
+          <div class='tag feel-tag' id='Aggressive'>Aggressive</div>
+          <div class='tag feel-tag' id='Bouncy'>Bouncy</div>
+          <div class='tag feel-tag' id='Bright'>Bright</div>
+          <div class='tag feel-tag' id='Calming'>Calming</div>
+          <div class='tag feel-tag' id='Dark'>Dark</div>
+          <div class='tag feel-tag' id='Driving'>Driving</div>
+          <div class='tag feel-tag' id='Eerie'>Eerie</div>
+          <div class='tag feel-tag' id='Epic'>Epic</div>
+          <div class='tag feel-tag' id='Grooving'>Grooving</div>
+          <div class='tag feel-tag' id='Humorous'>Humorous</div>
+          <div class='tag feel-tag' id='Intense'>Intense</div>
+          <div class='tag feel-tag' id='Mysterious'>Mysterious</div>
+          <div class='tag feel-tag' id='Mystical'>Mystical</div>
+          <div class='tag feel-tag' id='Relaxed'>Relaxed</div>
+          <div class='tag feel-tag' id='Somber'>Somber</div>
+          <div class='tag feel-tag' id='Suspenseful'>Suspenseful</div>
+          <div class='tag feel-tag' id='Unnerving'>Unnerving</div>
+          <div class='tag feel-tag' id='Uplifting'>Uplifting</div>
+        </div>
+      </div>
+      <hr>
+      <div class='row'>
+        <h4 class='match-input-title col-md-4'>
+          Genre
+        </h4>
+        <input class='col-md-8' id='genre'>
+      </div>
+      <div class='row'>
+        <div class='col-md-12 tag-container'>
+          <div class='tag genre-tag' id='African'>African</div>
+          <div class='tag genre-tag' id='Blues'>Blues</div>
+          <div class='tag genre-tag' id='Classical'>Classical</div>
+          <div class='tag genre-tag' id='Contemporary'>Contemporary</div>
+          <div class='tag genre-tag' id='Disco'>Disco</div>
+          <div class='tag genre-tag' id='Electronica'>Electronica</div>
+          <div class='tag genre-tag' id='Funk'>Funk</div>
+          <div class='tag genre-tag' id='Holiday'>Holiday</div>
+          <div class='tag genre-tag' id='Horror'>Horror</div>
+          <div class='tag genre-tag' id='Jazz'>Jazz</div>
+          <div class='tag genre-tag' id='Latin'>Latin</div>
+          <div class='tag genre-tag' id='Modern'>Modern</div>
+          <div class='tag genre-tag' id='Musical'>Musical</div>
+          <div class='tag genre-tag' id='Polka'>Polka</div>
+          <div class='tag genre-tag' id='Pop'>Pop</div>
+          <div class='tag genre-tag' id='Reggae'>Reggae</div>
+          <div class='tag genre-tag' id='Rock'>Rock</div>
+          <div class='tag genre-tag' id='Silent'>Silent Film Score</div>
+          <div class='tag genre-tag' id='Location'>Location</div>
+          <div class='tag genre-tag' id='Soundtrack'>Soundtrack</div>
+          <div class='tag genre-tag' id='Stings'>Stings</div>
+          <div class='tag genre-tag' id='Unclassifiable'>Unclassifiable</div>
+          <div class='tag genre-tag' id='World'>World</div>
+        </div>
+      </div>
+      <hr>
+      <div class='row'>
+        <h4 class='match-input-title col-md-4 vcenter'>
+          Time
+        </h4>
+        <input class='col-md-8' id='time'>
+      </div>
+      <hr>
+    </div>
+    <div class='col-xs-8 independent-scroll'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <h4 class='song-container-title'>Pinned and Playing</h4>
+          <button class='btn btn-info' id='clear-pins'>Clear Pins</button>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <div class='song-container container well' id='pinned-songs'></div>
+        </div>
+      </div>
+      <div class='row'>
+        <h4 class='song-container-title col-md-12'>Matched Songs</h4>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <div class='song-container container well' id='matched-songs'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<div class='song hidden' id='song-template'>
+  <div class='tools'>
+    <i class='pin fa fa-thumb-tack'></i>
+    <i class='just-play fa fa-play'></i>
+    <i class='play fa fa-play-circle'></i>
+    <i class='volume down fa fa-volume-down'></i>
+    <i class='volume up fa fa-volume-up'></i>
+    <input class='volume' max='1' min='0' step='.01' type='range' value='1'>
+  </div>
+  <div class='title'>
+    Song title
+  </div>
+  <h6 class='song-info'>
+    Feel:
+    <div class='tags small'>
+      Song tags
+    </div>
+  </h6>
+  <h6 class='song-info'>
+    Genre:
+    <div class='genre small'>
+      Song genre
+    </div>
+  </h6>
+  <h6 class='song-info'>
+    Instruments:
+    <div class='instruments small'>
+      Song instruments
+    </div>
+  </h6>
+  <h6 class='song-info'>
+    Time:
+    <div class='time small'>
+      Song time
+    </div>
+  </h6>
+</div>

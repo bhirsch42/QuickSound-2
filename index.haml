@@ -1,0 +1,136 @@
+%head
+  %link{:href => "css/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+  %link{:href => "font-awesome-4.3.0/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}/
+  %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
+  %script{:src => "js/jquery.min.js"}
+  %script{:src => "js/bootstrap.min.js"}
+  %script{:src => "js/soundjs-0.5.2.min.js"}
+  %script{:src => "js/jquery.hotkeys.js"}
+  %script{:src => "js/soundmanager.js"}
+  %script{:src => "js/quicksound.js"}
+%body
+  .row
+    .col-xs-4#control-panel
+      %h1 QuickSound
+      %i.fa.fa-random#random
+      %hr/
+      .row
+        %h4.match-input-title.col-md-4.vcenter
+          Crossfade
+        %input#crossfade-time.col-md-8{:max => "9", :min => "0", value: "2", :step => "1", :type => "range"}/
+        %span#crossfade-time-label 2
+        %span s
+      %hr/
+      .row
+        %h4.match-input-title.col-md-4.vcenter
+          Name
+        %input#name.col-md-8/
+      %hr/
+      .row
+        %h4.match-input-title.col-md-4.vcenter
+          Instruments
+        %input#instruments.col-md-8/
+      .row
+        .col-md-12
+          #instrument-text
+      %hr/
+      .row
+        %h4.match-input-title.col-md-4
+          Feel
+        %input#tags.col-md-8/
+      .row
+        .col-md-12.tag-container
+          #Action.tag.feel-tag Action
+          #Aggressive.tag.feel-tag Aggressive
+          #Bouncy.tag.feel-tag Bouncy
+          #Bright.tag.feel-tag Bright
+          #Calming.tag.feel-tag Calming
+          #Dark.tag.feel-tag Dark
+          #Driving.tag.feel-tag Driving
+          #Eerie.tag.feel-tag Eerie
+          #Epic.tag.feel-tag Epic
+          #Grooving.tag.feel-tag Grooving
+          #Humorous.tag.feel-tag Humorous
+          #Intense.tag.feel-tag Intense
+          #Mysterious.tag.feel-tag Mysterious
+          #Mystical.tag.feel-tag Mystical
+          #Relaxed.tag.feel-tag Relaxed
+          #Somber.tag.feel-tag Somber
+          #Suspenseful.tag.feel-tag Suspenseful
+          #Unnerving.tag.feel-tag Unnerving
+          #Uplifting.tag.feel-tag Uplifting
+      %hr/
+      .row
+        %h4.match-input-title.col-md-4
+          Genre
+        %input#genre.col-md-8/
+      .row
+        .col-md-12.tag-container
+          #African.tag.genre-tag African
+          #Blues.tag.genre-tag Blues
+          #Classical.tag.genre-tag Classical
+          #Contemporary.tag.genre-tag Contemporary
+          #Disco.tag.genre-tag Disco
+          #Electronica.tag.genre-tag Electronica
+          #Funk.tag.genre-tag Funk
+          #Holiday.tag.genre-tag Holiday
+          #Horror.tag.genre-tag Horror
+          #Jazz.tag.genre-tag Jazz
+          #Latin.tag.genre-tag Latin
+          #Modern.tag.genre-tag Modern
+          #Musical.tag.genre-tag Musical
+          #Polka.tag.genre-tag Polka
+          #Pop.tag.genre-tag Pop
+          #Reggae.tag.genre-tag Reggae
+          #Rock.tag.genre-tag Rock
+          #Silent.tag.genre-tag Silent Film Score
+          #Location.tag.genre-tag Location
+          #Soundtrack.tag.genre-tag Soundtrack
+          #Stings.tag.genre-tag Stings
+          #Unclassifiable.tag.genre-tag Unclassifiable
+          #World.tag.genre-tag World
+      %hr/
+      .row
+        %h4.match-input-title.col-md-4.vcenter
+          Time
+        %input#time.col-md-8/
+      %hr/
+    .col-xs-8.independent-scroll
+      .row
+        .col-md-12
+          %h4.song-container-title Pinned and Playing
+          %button.btn.btn-info#clear-pins Clear Pins
+      .row
+        .col-md-12
+          #pinned-songs.song-container.container.well
+      .row
+        %h4.song-container-title.col-md-12 Matched Songs
+      .row
+        .col-md-12
+          #matched-songs.song-container.container.well
+#song-template.song.hidden
+  .tools
+    %i.pin.fa.fa-thumb-tack
+    %i.just-play.fa.fa-play
+    %i.play.fa.fa-play-circle
+    %i.volume.down.fa.fa-volume-down
+    %i.volume.up.fa.fa-volume-up
+    %input.volume{:min => "0", :max => "1", value: "1", :step => ".01", :type => "range"}
+  .title
+    Song title
+  %h6.song-info
+    Feel:
+    .tags.small
+      Song tags
+  %h6.song-info
+    Genre:
+    .genre.small
+      Song genre
+  %h6.song-info
+    Instruments:
+    .instruments.small
+      Song instruments
+  %h6.song-info
+    Time:
+    .time.small
+      Song time

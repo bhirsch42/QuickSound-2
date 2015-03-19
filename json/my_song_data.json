@@ -1,0 +1,32 @@
+[
+	{
+		"description": "Added manually",
+		"tags": ["Somber", "Unnerving"],
+		"instruments": ["Piano"],
+		"title": "Born a Stranger",
+		"collection": "Ben",
+		"link": "mysongs/Born%20a%20Stranger.mp3",
+		"time": "Manual",
+		"genre": "Soundtrack"
+	},
+	{
+		"description": "Added manually",
+		"tags": ["Somber", "Unnerving", "Mysterious"],
+		"instruments": ["Piano"],
+		"title": "Misconception",
+		"collection": "Ben",
+		"link": "mysongs/Misconception.mp3",
+		"time": "Manual",
+		"genre": "Contemporary"
+	},
+	{
+		"description": "Added manually",
+		"tags": [],
+		"instruments": [],
+		"title": "City",
+		"collection": "Ben",
+		"link": "mysongs/City.mp3",
+		"time": "Manual",
+		"genre": "Location"
+	}
+]

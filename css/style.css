@@ -1,0 +1,136 @@
+body {
+  overflow: hidden; }
+
+input {
+  max-width: 200px;
+  height: 40px; }
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px; }
+
+.match-input-title {
+  text-align: right; }
+
+hr {
+  margin: 10px; }
+
+.tag {
+  display: inline-block;
+  background-color: lightgray;
+  margin: 5px 0px 0px 5px;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 12px; }
+  .tag.selected {
+    background-color: lightgreen; }
+
+.song {
+  position: relative;
+  display: inline-block;
+  background-color: lightgray;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px; }
+  .song.playing {
+    background-color: lightgreen; }
+  .song.pinned {
+    background-color: lightblue; }
+  .song.playing.pinned {
+    background-color: lightgreen; }
+    .song.playing.pinned .title {
+      background-color: lightblue; }
+
+.tools {
+  -webkit-transition: opacity .2s ease;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .tools .pin {
+    -webkit-transition: color .1s ease;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 24px; }
+  .tools .pin:hover {
+    color: blue; }
+  .tools .play {
+    -webkit-transition: color .1s ease;
+    font-size: 5em; }
+  .tools .play:hover {
+    color: green; }
+  .tools .just-play {
+    -webkit-transition: color .1s ease;
+    position: absolute;
+    top: 4px;
+    right: 30px;
+    font-size: 24px; }
+  .tools .just-play:hover {
+    color: green; }
+  .tools .volume {
+    -webkit-transition: color .1s ease;
+    position: absolute;
+    bottom: 4px;
+    font-size: 24px; }
+    .tools .volume.down {
+      left: 4px; }
+    .tools .volume.up {
+      right: 4px; }
+  .tools input.volume {
+    bottom: -4px;
+    width: 95px;
+    left: 25px; }
+
+#clear-pins {
+  float: right;
+  margin: 4px; }
+
+.tools:hover {
+  opacity: 1; }
+
+.independent-scroll {
+  height: 100%;
+  overflow: scroll; }
+
+.song-container {
+  border-radius: 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  align-content: flex-start;
+  width: 101%; }
+
+.song-container-title {
+  display: inline-block; }
+
+.tag-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch; }
+
+#control-panel {
+  height: 100%;
+  overflow: scroll; }
+
+#pinned-songs {
+  min-height: 250px; }
+
+#random {
+  position: absolute;
+  font-size: 2em;
+  top: 18px;
+  left: 40px;
+  background-color: lightgray;
+  border-radius: 100%;
+  padding: 10px; }
+  #random.active {
+    background-color: lightblue; }
